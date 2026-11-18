@@ -1,0 +1,14 @@
+[
+    {
+        "challengeId": "G09-101",
+        "hostGroup": "G09",
+        "category": "discover",
+        "title": "Take a photo of the base",
+        "description": "Take a photo of the base and submit it as evidence.",
+        "skills": [
+            "Photography",
+            "Observation"
+        ],
+        "defaultEvidenceUrl": "https://example.com/discover-base-evidence"
+    }
+]

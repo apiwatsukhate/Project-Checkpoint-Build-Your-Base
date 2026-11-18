@@ -4,13 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>My Learning Portfolio</title>
+    <title>My Learning Portfolio - CS100 Power Up</title>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
-
 </head>
 
 <body class="container py-4">
@@ -18,133 +16,169 @@
     <h1>
         <i class="fa-solid fa-folder-open"></i>
         My Learning Portfolios
-
     </h1>
 
-
     <div class="row g-4">
+        <!-- คอลัมน์ซ้าย: Quick Guide + Create Portfolio -->
         <div class="col-12 col-lg-6">
-
             <div class="quick-guide">
                 <div class="quick-guide-icon">
                     <i class="fa-solid fa-wand-magic-sparkles"></i>
                 </div>
-
                 <h4>Build your portfolio</h4>
-                <p>Start with your profile, then add projects and what you learned.</p>
-
-                <div class="quick-guide-step">
-                    <span>01</span> Create your profile
-                </div>
-
-                <div class="quick-guide-step">
-                    <span>02</span> Add your projects
-                </div>
-
-                <div class="quick-guide-step">
-                    <span>03</span> Share your evidence
-                </div>
-                <div class="quick-guide-tip">
-                    <strong>💡 Quick tip</strong>
-                    <p>Choose a clear project title.</p>
-                    <p>Describe what you did and learned.</p>
-                    <p>Add a working evidence link.</p>
-                </div>
+                <p>Start with your profile, then add projects or exchange Challenge items.</p>
+                <div class="quick-guide-step"><span>01</span> Create your profile (Saved on Server)</div>
+                <div class="quick-guide-step"><span>02</span> Add projects or Import Challenge JSON</div>
+                <div class="quick-guide-step"><span>03</span> Export <code>my-portfolio.json</code> for submission</div>
             </div>
 
-            <h3>Create Portfolio</h3>
+            <h3><i class="fa-solid fa-user-plus"></i> Create Portfolio</h3>
             <section>
                 <form id="portfolio-form">
-                    <input class="form-control mb-2" name="name" placeholder="Your Name" required>
-
-                    <textarea class="form-control mb-2" name="whatIEnjoy" placeholder="What I Enjoy"
-                        required></textarea>
-
-                    <textarea class="form-control mb-2" name="whatIveTried" placeholder="What I've Tried"
-                        required></textarea>
-
-                    <textarea class="form-control mb-2" name="whatImCuriousAbout" placeholder="What I'm Curious About"
-                        required></textarea>
+                    <input class="form-control mb-2" name="displayedName" placeholder="Your Displayed Name" required>
+                    <textarea class="form-control mb-2" name="whatIEnjoy" placeholder="What I Enjoy" required></textarea>
+                    <textarea class="form-control mb-2" name="whatIveTried" placeholder="What I've Tried" required></textarea>
+                    <textarea class="form-control mb-2" name="whatImCuriousAbout" placeholder="What I'm Curious About" required></textarea>
 
                     <button type="submit">
-                        <i class="fa-solid fa-user-plus"></i>
-                        Create Portfolio
+                        <i class="fa-solid fa-user-plus"></i> Create Portfolio
                     </button>
-
                     <button type="reset">
-                        <i class="fa-solid fa-trash"></i>
-                        Clear Form
-
+                        <i class="fa-solid fa-trash"></i> Clear Form
                     </button>
-
-
-
                 </form>
-
-                <hr>
             </section>
         </div>
 
-
+        <!-- คอลัมน์ขวา: Add Portfolio Item ปกติ -->
         <div class="col-12 col-lg-6">
-
-            <h3><i class="fa-solid fa-paperclip">Add Portfolio Item</i></h3>
-
+            <h3><i class="fa-solid fa-paperclip"></i> Add Portfolio Item</h3>
             <section>
                 <form id="item-form">
-
-                    <select class="form-select mb-2" name="portfolioId" required>
+                    <select class="form-select mb-2 portfolio-select" name="portfolioId" required>
                         <option value="">Select Portfolio</option>
                     </select>
-
                     <input class="form-control mb-2" name="title" placeholder="Title" required>
-
-                    <input class="form-control mb-2" name="type" placeholder="Type" required>
-
+                    <input class="form-control mb-2" name="type" placeholder="Type (e.g. Course Assignment, Project)" required>
                     <input class="form-control mb-2" type="date" name="date" required>
-
                     <input class="form-control mb-2" name="role" placeholder="Role" required>
-
-                    <textarea class="form-control mb-2" name="description" placeholder="Description"
-                        required></textarea>
-
-                    <input class="form-control mb-2" name="skills" placeholder="Skills (HTML, CSS, JavaScript)"
-                        required>
-
-                    <textarea class="form-control mb-2" name="whatIDid" placeholder="What I did" required></textarea>
-
-                    <textarea class="form-control mb-2" name="whatILearned" placeholder="What I learned"
-                        required></textarea>
-
-                    <textarea class="form-control mb-2" name="challenge" placeholder="Challenge" required></textarea>
-
-                    <textarea class="form-control mb-2" name="nextStep" placeholder="Next step" required></textarea>
-
-                    <input class="form-control mb-2" type="url" name="evidence" placeholder="Evidence URL" required>
+                    <textarea class="form-control mb-2" name="description" placeholder="Description" required></textarea>
+                    <input class="form-control mb-2" name="skills" placeholder="Skills (comma separated: HTML, CSS, JS)" required>
+                    <textarea class="form-control mb-2" name="whatIDid" placeholder="Reflection: What I did" required></textarea>
+                    <textarea class="form-control mb-2" name="whatILearned" placeholder="Reflection: What I learned" required></textarea>
+                    <textarea class="form-control mb-2" name="challenge" placeholder="Reflection: Challenge" required></textarea>
+                    <textarea class="form-control mb-2" name="nextStep" placeholder="Reflection: Next step" required></textarea>
+                    <input class="form-control mb-2" type="url" name="evidence" placeholder="Evidence URL (https://...)" required>
 
                     <button type="submit">
-                        <i class="fa-solid fa-folder-plus"></i>
-                        Add Portfolio Item
+                        <i class="fa-solid fa-folder-plus"></i> Add Portfolio Item
                     </button>
-
                 </form>
-
-                <hr>
             </section>
         </div>
     </div>
+
+    <!-- ส่วนที่ 2: Challenge Booth & Portfolio Item Exchange -->
+    <div class="row g-4 mt-2">
+        <!-- ฝั่ง Host: สร้าง JSON ให้เพื่อนที่ผ่าน Challenge -->
+        <div class="col-12 col-lg-6">
+            <h3><i class="fa-solid fa-gamepad"></i> Host Booth: Generate Challenge Item JSON</h3>
+            <section>
+                <p class="text-muted small">สำหรับเจ้าของบูธ: กรอกข้อมูลผู้เล่นที่ทำ Challenge สำเร็จเพื่อสร้าง JSON ส่งให้เพื่อน Copy หรือดาวน์โหลด</p>
+                <form id="booth-generator-form">
+                    <input class="form-control mb-2" name="hostGroup" placeholder="Host Group Name (e.g. Group 05)" required>
+                    <input class="form-control mb-2" name="challengeId" placeholder="Challenge ID (e.g. CH-01)" required>
+                    <select class="form-select mb-2" name="category" required>
+                        <option value="discover">Category: Discover (ลองสิ่งใหม่)</option>
+                        <option value="mix">Category: Mix Skills (ผสมทักษะ)</option>
+                        <option value="levelup">Category: Level Up (พัฒนาต่อยอด)</option>
+                    </select>
+                    <input class="form-control mb-2" name="title" placeholder="Challenge Title (e.g. Fix This Poster Challenge)" required>
+                    <input class="form-control mb-2" name="role" value="Challenge Participant" placeholder="Role" required>
+                    <textarea class="form-control mb-2" name="description" placeholder="What the participant accomplished at the booth" required></textarea>
+                    <input class="form-control mb-2" name="skills" placeholder="Skills gained (comma separated)" required>
+                    <input class="form-control mb-2" type="url" name="evidence" placeholder="Evidence URL (https://...)" required>
+
+                    <button type="submit">
+                        <i class="fa-solid fa-code"></i> Generate Item JSON
+                    </button>
+                </form>
+
+                <div class="mt-3">
+                    <label class="form-label">Generated JSON (ให้เพื่อนกด Copy หรือ Download):</label>
+                    <textarea id="generated-item-json" class="form-control mb-2" rows="6" readonly placeholder="JSON will appear here..."></textarea>
+                    <div class="d-flex gap-2">
+                        <button type="button" id="copy-json-btn" class="btn btn-outline-secondary w-50">
+                            <i class="fa-solid fa-copy"></i> Copy JSON
+                        </button>
+                        <button type="button" id="download-item-json-btn" class="btn btn-outline-primary w-50">
+                            <i class="fa-solid fa-file-arrow-down"></i> Download .json
+                        </button>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- ฝั่ง Tester: วาง JSON หรืออัปโหลดไฟล์ .json จากเพื่อน -->
+        <div class="col-12 col-lg-6">
+            <h3><i class="fa-solid fa-file-import"></i> Tester: Import Portfolio Item JSON</h3>
+            <section>
+                <p class="text-muted small">สำหรับผู้เข้าร่วม: อัปโหลดไฟล์ <code>.json</code> หรือวางข้อความ JSON ที่ได้จากบูธเพื่อน</p>
+
+                <!-- ปุ่มเลือกไฟล์ .json -->
+                <div class="mb-3">
+                    <label for="import-json-file" class="form-label fw-bold">
+                        <i class="fa-solid fa-upload"></i> เลือกไฟล์ .json (Upload File):
+                    </label>
+                    <input class="form-control" type="file" id="import-json-file" accept=".json,application/json">
+                </div>
+
+                <label for="import-json-input" class="form-label fw-bold">หรือวางข้อความ JSON (Paste JSON):</label>
+                <textarea id="import-json-input" class="form-control mb-2" rows="5" placeholder='Paste Portfolio Item JSON here...'></textarea>
+                
+                <button type="button" id="parse-json-btn" class="btn btn-secondary w-100 mb-3">
+                    <i class="fa-solid fa-magnifying-glass"></i> 1. Load & Preview JSON
+                </button>
+
+                <form id="import-confirm-form" style="display: none;">
+                    <div class="alert alert-info py-2 small" id="import-preview-header"></div>
+                    
+                    <label>เลือก Portfolio ของคุณ:</label>
+                    <select class="form-select mb-2 portfolio-select" name="targetPortfolioId" required>
+                        <option value="">Select Your Portfolio</option>
+                    </select>
+
+                    <label>ตรวจสอบ/แก้ไข Reflection ของคุณ:</label>
+                    <textarea class="form-control mb-2" name="whatIDid" placeholder="What I did" required></textarea>
+                    <textarea class="form-control mb-2" name="whatILearned" placeholder="What I learned" required></textarea>
+                    <textarea class="form-control mb-2" name="challenge" placeholder="Challenge faced" required></textarea>
+                    <textarea class="form-control mb-2" name="nextStep" placeholder="Next step" required></textarea>
+
+                    <label>Evidence URL:</label>
+                    <input class="form-control mb-2" type="url" name="evidence" required>
+
+                    <button type="submit">
+                        <i class="fa-solid fa-cloud-arrow-up"></i> 2. Save Imported Item to Server
+                    </button>
+                </form>
+            </section>
+        </div>
     </div>
 
-
-    <h3>Portfolio List</h3>
+    <!-- ส่วนแสดงผลรายการ Portfolio ทั้งหมดจาก Server -->
+    <div class="d-flex justify-content-between align-items-center mt-4 mb-2">
+        <h3 class="m-0"><i class="fa-solid fa-list"></i> Portfolio List (Live from Server)</h3>
+        <button type="button" id="refresh-btn" class="btn btn-sm btn-outline-dark">
+            <i class="fa-solid fa-rotate"></i> Refresh
+        </button>
+    </div>
 
     <section>
         <div id="portfolio-list"></div>
     </section>
 
-
-    <script src="js/portfolip.js"></script>
-
+    <script src="script.js"></script>
+    <script src="exchange.js"></script>
 </body>
 
 </html>
