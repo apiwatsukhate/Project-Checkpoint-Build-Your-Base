@@ -164,28 +164,31 @@
             </section>
         </div>
     </div>
-<!-- ส่วนเสริม: Color Challenge (สุ่มสี) -->
+<!-- Mini Challenge: Random Color Generator -->
 <div class="row g-4 mt-2">
     <div class="col-12">
         <h3><i class="fa-solid fa-palette"></i> Color Challenge (สุ่มสี)</h3>
         <section>
-            <p class="text-muted small">กดสุ่มสีเพื่อดูรหัส HEX / RGB และกดปุ่มนำไปเติมในฟอร์มได้ทันที</p>
-            <div class="d-flex flex-wrap align-items-center gap-3">
-                <div id="color-swatch" class="border rounded" style="width: 72px; height: 72px; background-color: #6366f1;"></div>
-                <div>
-                    <div class="fw-bold fs-5" id="color-hex">#6366F1</div>
-                    <div class="text-muted small" id="color-rgb">rgb(99, 102, 241)</div>
-                    <div class="d-flex flex-wrap gap-2 mt-2">
-                        <button type="button" id="random-color-btn" class="btn btn-primary btn-sm">
-                            <i class="fa-solid fa-shuffle"></i> สุ่มสีใหม่
-                        </button>
-                        <button type="button" id="copy-color-btn" class="btn btn-outline-secondary btn-sm">
-                            <i class="fa-solid fa-copy"></i> Copy HEX
-                        </button>
-                        <button type="button" id="apply-color-skill-btn" class="btn btn-outline-success btn-sm">
-                            <i class="fa-solid fa-wand-magic-sparkles"></i> เติมลงช่อง Skills
-                        </button>
+            <div class="d-flex flex-wrap align-items-center justify-content-between gap-3 p-3 rounded-4 border bg-light">
+                <div class="d-flex align-items-center gap-3">
+                    <div id="color-swatch" class="rounded-4 border shadow-sm flex-shrink-0"
+                         style="width: 84px; height: 84px; background-color: #6366f1; transition: background-color 0.25s ease;">
                     </div>
+                    <div class="text-muted small">
+                        กดสุ่มสีเพื่อทายหรือเลือกโทนสี แล้วส่งแท็กทักษะเข้าฟอร์มได้ทันที
+                    </div>
+                </div>
+
+                <div class="d-flex flex-wrap gap-2">
+                    <button type="button" id="random-color-btn" class="btn btn-primary btn-sm">
+                        <i class="fa-solid fa-shuffle"></i> สุ่มสีใหม่
+                    </button>
+                    <button type="button" id="copy-color-btn" class="btn btn-outline-secondary btn-sm">
+                        <i class="fa-solid fa-copy"></i> Copy สี
+                    </button>
+                    <button type="button" id="apply-color-skill-btn" class="btn btn-outline-success btn-sm">
+                        <i class="fa-solid fa-wand-magic-sparkles"></i> เติมลงช่อง Skills
+                    </button>
                 </div>
             </div>
         </section>
