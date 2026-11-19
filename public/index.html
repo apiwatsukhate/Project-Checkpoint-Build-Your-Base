@@ -19,13 +19,13 @@
     </h1>
 
     <div class="row g-4">
-        <!-- คอลัมน์ซ้าย: Quick Guide + Create Portfolio -->
+       
         <div class="col-12 col-lg-6">
             <div class="quick-guide">
                 <div class="quick-guide-icon">
                     <i class="fa-solid fa-wand-magic-sparkles"></i>
                 </div>
-                <h4>Build your portfolio</h4>
+                <h4>Quick Guide</h4>
                 <p>Start with your profile, then add projects or exchange Challenge items.</p>
                 <div class="quick-guide-step"><span>01</span> Create your profile (Saved on Server)</div>
                 <div class="quick-guide-step"><span>02</span> Add projects or Import Challenge JSON</div>
@@ -165,6 +165,7 @@
         </div>
     </div>
 <!-- Mini Challenge: Random Color Generator -->
+<!-- Mini Challenge: Random Color Generator -->
 <div class="row g-4 mt-2">
     <div class="col-12">
         <h3><i class="fa-solid fa-palette"></i> Color Challenge (สุ่มสี)</h3>
@@ -174,8 +175,11 @@
                     <div id="color-swatch" class="rounded-4 border shadow-sm flex-shrink-0"
                          style="width: 84px; height: 84px; background-color: #6366f1; transition: background-color 0.25s ease;">
                     </div>
-                    <div class="text-muted small">
-                        กดสุ่มสีเพื่อทายหรือเลือกโทนสี แล้วส่งแท็กทักษะเข้าฟอร์มได้ทันที
+                    <div>
+                        <div id="color-name" class="fw-bold fs-5 mb-1">Blue</div>
+                        <div class="text-muted small">
+                            สุ่มสีเพื่อดูชื่อสีและหาสิ่งของรอบห้องที่มีสีนั้นมาให้กลุ่มเราดู
+                        </div>
                     </div>
                 </div>
 
@@ -184,7 +188,7 @@
                         <i class="fa-solid fa-shuffle"></i> สุ่มสีใหม่
                     </button>
                     <button type="button" id="copy-color-btn" class="btn btn-outline-secondary btn-sm">
-                        <i class="fa-solid fa-copy"></i> Copy สี
+                        <i class="fa-solid fa-copy"></i> Copy ชื่อสี
                     </button>
                     <button type="button" id="apply-color-skill-btn" class="btn btn-outline-success btn-sm">
                         <i class="fa-solid fa-wand-magic-sparkles"></i> เติมลงช่อง Skills
