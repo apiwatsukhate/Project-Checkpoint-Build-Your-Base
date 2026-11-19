@@ -113,19 +113,20 @@
 
   if (applySkillBtn) {
     applySkillBtn.addEventListener("click", function () {
-      const skillInputs = document.querySelectorAll('input[name="skills"]');
-      if (skillInputs.length === 0) return;
+      // เจาะจงเฉพาะช่อง skills ในฟอร์มของ Challenge / Booth เท่านั้น
+      const boothSkillInput = document.querySelector('#booth-generator-form input[name="skills"]');
+      if (!boothSkillInput) return;
 
       const tag = "Color " + currentColor.name;
-      skillInputs.forEach((input) => {
-        const current = input.value.trim();
-        if (!current) {
-          input.value = tag;
-        } else if (!current.includes(tag)) {
-          input.value = current + ", " + tag;
-        }
-      });
-      showStatus("เติม " + tag + " ลงช่อง Skills แล้ว ✓");
+      const current = boothSkillInput.value.trim();
+
+      if (!current) {
+        boothSkillInput.value = tag;
+      } else if (!current.includes(tag)) {
+        boothSkillInput.value = current + ", " + tag;
+      }
+
+      showStatus("เติม " + tag + " ลงช่อง Skills ของ Challenge แล้ว ✓");
     });
   }
 
