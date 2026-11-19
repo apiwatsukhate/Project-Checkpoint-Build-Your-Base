@@ -165,32 +165,43 @@
         </div>
     </div>
 <!-- Mini Challenge: Random Color Generator -->
-<!-- Mini Challenge: Random Color Generator -->
 <div class="row g-4 mt-2">
     <div class="col-12">
         <h3><i class="fa-solid fa-palette"></i> Color Challenge (สุ่มสี)</h3>
         <section>
-            <div class="d-flex flex-wrap align-items-center justify-content-between gap-3 p-3 rounded-4 border bg-light">
+            <div class="d-flex flex-wrap align-items-center justify-content-between gap-3 p-3 rounded-4 border"
+                 style="background: linear-gradient(135deg, #ffffff 0%, #fff8f3 100%);">
                 <div class="d-flex align-items-center gap-3">
-                    <div id="color-swatch" class="rounded-4 border shadow-sm flex-shrink-0"
-                         style="width: 84px; height: 84px; background-color: #6366f1; transition: background-color 0.25s ease;">
+                    <!-- กล่องแสดงสีหลัก -->
+                    <div id="color-swatch" class="rounded-4 shadow-sm flex-shrink-0"
+                         style="width: 84px; height: 84px; background-color: #3B82F6; border: 3px solid rgba(0, 0, 0, 0.1); transition: all 0.25s ease;">
                     </div>
+
                     <div>
-                        <div id="color-name" class="fw-bold fs-5 mb-1">Blue</div>
-                        <div class="text-muted small">
-                            สุ่มสีเพื่อดูชื่อสีและหาสิ่งของรอบห้องที่มีสีนั้นมาให้กลุ่มเราดู
+                        <div class="d-flex align-items-center gap-2 mb-1">
+                            <span id="color-name" class="fw-bold fs-4 text-dark">Blue</span>
+                            <span id="color-status-badge" class="badge rounded-pill bg-success-subtle text-success small" style="display: none;"></span>
+                        </div>
+                        <div class="text-muted small mb-2">
+                            สุ่มสีง่ายๆ สำหรับเล่นชาเลนจ์ และนำมาให้กลุ่มเราดู
+                        </div>
+                        <!-- แถบประวัติสีล่าสุด (กดย้อนเลือกได้) -->
+                        <div class="d-flex align-items-center gap-2">
+                      <span class="text-muted" style="font-size: 0.75rem;">สีล่าสุด:</span>
+                            <div id="color-history" class="d-flex align-items-center gap-1"></div>
                         </div>
                     </div>
                 </div>
 
+                <!-- กลุ่มปุ่มกด -->
                 <div class="d-flex flex-wrap gap-2">
-                    <button type="button" id="random-color-btn" class="btn btn-primary btn-sm">
+                    <button type="button" id="random-color-btn" class="btn btn-primary btn-sm px-3">
                         <i class="fa-solid fa-shuffle"></i> สุ่มสีใหม่
                     </button>
-                    <button type="button" id="copy-color-btn" class="btn btn-outline-secondary btn-sm">
+                    <button type="button" id="copy-color-btn" class="btn btn-outline-secondary btn-sm px-3">
                         <i class="fa-solid fa-copy"></i> Copy ชื่อสี
                     </button>
-                    <button type="button" id="apply-color-skill-btn" class="btn btn-outline-success btn-sm">
+                    <button type="button" id="apply-color-skill-btn" class="btn btn-outline-success btn-sm px-3">
                         <i class="fa-solid fa-wand-magic-sparkles"></i> เติมลงช่อง Skills
                     </button>
                 </div>
